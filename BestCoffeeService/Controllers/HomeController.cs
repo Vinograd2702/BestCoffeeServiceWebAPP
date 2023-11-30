@@ -3,150 +3,98 @@ using Microsoft.EntityFrameworkCore;
 using BestCoffeeService.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Linq;
+using BestCoffeeService.BLL.Interfaces;
+using BestCoffeeService.BLL.DTO;
+using BestCoffeeService.DAL.Entities;
+using BestCoffeeService.BLL.Services;
 
 namespace BestCoffeeService.Controllers
 {
     public class HomeController : Controller
     {
-        CoffeeShopMenuItemContext db;//определили переменную контекста данных для работы с базой данных
-        public HomeController(CoffeeShopMenuItemContext context)//определяем контекст в конструкторе контроллера
+        private readonly ICoffeeShopOrderService _coffeeShopOrderService;
+
+        public HomeController(ICoffeeShopOrderService coffeeShopOrderService)
         {
-            db = context;
-            if (!db.TypeOfCoffees.Any())
-            {
-                TypeOfCoffee espresso = new TypeOfCoffee { NameTypeOfCoffee = "Эспрессо" };
-                TypeOfCoffee cappuccino = new TypeOfCoffee { NameTypeOfCoffee = "Капучино" };
-                TypeOfCoffee latte = new TypeOfCoffee { NameTypeOfCoffee = "Латте" };
-                TypeOfCoffee americano = new TypeOfCoffee { NameTypeOfCoffee = "Aмерикано" };
-
-                CoffeeShopMenuItem coffeeShopMenuItem1 = new CoffeeShopMenuItem
-                {
-                    CoffeePrice = 100,
-                    CoffeeRating = 3,
-                    NameCoffeeShop = "Магнит",
-                    TypeOfCoffee = espresso
-                };
-                CoffeeShopMenuItem coffeeShopMenuItem2 = new CoffeeShopMenuItem
-                {
-                    CoffeePrice = 200,
-                    CoffeeRating = 5,
-                    NameCoffeeShop = "Кофикс",
-                    TypeOfCoffee = cappuccino
-                };
-                CoffeeShopMenuItem coffeeShopMenuItem3 = new CoffeeShopMenuItem
-                {
-                    CoffeePrice = 250,
-                    CoffeeRating = 4,
-                    NameCoffeeShop = "Кофикс",
-                    TypeOfCoffee = latte
-                };
-                CoffeeShopMenuItem coffeeShopMenuItem4 = new CoffeeShopMenuItem
-                {
-                    CoffeePrice = 150,
-                    CoffeeRating = 4,
-                    NameCoffeeShop = "Макдональдс",
-                    TypeOfCoffee = latte
-                };
-                CoffeeShopMenuItem coffeeShopMenuItem5 = new CoffeeShopMenuItem
-                {
-                    CoffeePrice = 175,
-                    CoffeeRating = 2,
-                    NameCoffeeShop = "Твой кофе",
-                    TypeOfCoffee = americano
-                };
-
-
-                db.TypeOfCoffees.AddRange(espresso, cappuccino, latte, americano);
-                db.CoffeeShopMenuItems.AddRange(coffeeShopMenuItem1, coffeeShopMenuItem2,
-                    coffeeShopMenuItem3, coffeeShopMenuItem4, coffeeShopMenuItem5);
-
-                db.SaveChanges();
-            }
+            _coffeeShopOrderService = coffeeShopOrderService;
         }
 
-        public async Task<IActionResult> Index(string nameCoffeeShop, int typeOfCoffee = 0, int page = 1,
-                   SortState sortOrder = SortState.NameCoffeeShopAsc)
+        //
+
+        public async Task<IActionResult> Index(string nameOfClient, int typeOfCoffee = 0, int page = 1,
+                   SortState sortOrder = SortState.NameOfClientAsc)
         {
             int pageSize = 3;
 
             //фильтрация
-            IQueryable<CoffeeShopMenuItem> coffeeShopMenuItems = db.CoffeeShopMenuItems.Include(x => x.TypeOfCoffee);
+            var response = await _coffeeShopOrderService.GetClientOrders();
+            var clientOrders = response.Data;
+
 
             if (typeOfCoffee != 0)
             {
-                coffeeShopMenuItems = coffeeShopMenuItems.Where(p => p.TypeOfCoffeeID == typeOfCoffee);
+                clientOrders = clientOrders.Where(p => p.TypeOfCoffeeID == typeOfCoffee);
             }
-            if (!string.IsNullOrEmpty(nameCoffeeShop))
+            if (!string.IsNullOrEmpty(nameOfClient))
             {
-                coffeeShopMenuItems = coffeeShopMenuItems.Where(p => p.NameCoffeeShop!.Contains(nameCoffeeShop));
+                clientOrders = clientOrders.Where(p => p.NameOfClient!.Contains(nameOfClient));
             }
 
             // сортировка
             switch (sortOrder)
             {
-                case SortState.NameCoffeeShopDesc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderByDescending(s => s.NameCoffeeShop);
+                case SortState.NameOfClientDesc:
+                    clientOrders = clientOrders.OrderByDescending(s => s.NameOfClient);
                     break;
-                case SortState.CoffeePriceAsc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderBy(s => s.CoffeePrice);
+                case SortState.OrderDateAsc:
+                    clientOrders = clientOrders.OrderBy(s => s.OrderDate);
                     break;
-                case SortState.CoffeePriceDesc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderByDescending(s => s.CoffeePrice);
-                    break;
-                case SortState.CoffeeRatingAsc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderBy(s => s.CoffeeRating);
-                    break;
-                case SortState.CoffeeRatingDesc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderByDescending(s => s.CoffeeRating);
-                    break;
-                case SortState.TypeOfCoffeeAsc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderBy(s => s.TypeOfCoffee!.NameTypeOfCoffee);
-                    break;
-                case SortState.TypeOfCoffeeDesc:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderByDescending(s => s.TypeOfCoffee!.NameTypeOfCoffee);
+                case SortState.OrderDateDesc:
+                    clientOrders = clientOrders.OrderByDescending(s => s.OrderDate);
                     break;
                 default:
-                    coffeeShopMenuItems = coffeeShopMenuItems.OrderBy(s => s.NameCoffeeShop);
+                    clientOrders = clientOrders.OrderBy(s => s.NameOfClient);
                     break;
             }
 
 
             // пагинация
-            var count = await coffeeShopMenuItems.CountAsync();
-            var items = await coffeeShopMenuItems.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+            var count = clientOrders.Count();
+            var items = clientOrders.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
+
+            var pages = new PageViewModel(count, page, pageSize);
+            var typeOfCoffees = (await _coffeeShopOrderService.GetTypeOfCoffees()).Data.ToList();
+            var filterModel = new FilterViewModel(typeOfCoffees, typeOfCoffee, nameOfClient);
             // формируем модель представления
             IndexViewModel viewModel = new IndexViewModel(
                 items,
-                new PageViewModel(count, page, pageSize),
-                new FilterViewModel(db.TypeOfCoffees.ToList(), typeOfCoffee, nameCoffeeShop),
+                pages,
+                filterModel,
                 new SortViewModel(sortOrder)
             );
             return View(viewModel);
         }
 
-        public IActionResult Create()//интерфейс метода 
+        public async Task<IActionResult> Create()//интерфейс метода 
         {
-            ViewBag.TypeOfCoffees = new SelectList(db.TypeOfCoffees, "Id", "NameTypeOfCoffee");
+            ViewBag.TypeOfCoffees = new SelectList((await _coffeeShopOrderService.GetTypeOfCoffees()).Data.ToList(), "Id", "NameTypeOfCoffee");
+           
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Create(CoffeeShopMenuItem coffeeShopMenuItem)//метод insert элемента в базу данных (ввода)
+        public async Task<IActionResult> Create(ClientOrderDTO clientOrderDTO)//метод insert элемента в базу данных (ввода)
         {
-            coffeeShopMenuItem.TypeOfCoffee = db.TypeOfCoffees.FirstOrDefault(e => e.Id == coffeeShopMenuItem.TypeOfCoffeeID);
-            db.CoffeeShopMenuItems.Add(coffeeShopMenuItem);//
-            await db.SaveChangesAsync();
+            _coffeeShopOrderService.CreateClientOrder(clientOrderDTO);
             return RedirectToAction("Index");//возврат на страничку Index
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int id)
         {
             if (id != null)
             {
-                CoffeeShopMenuItem coffeeShopMenuItem = new CoffeeShopMenuItem { Id = id.Value };
-                db.Entry(coffeeShopMenuItem).State = EntityState.Deleted;
-                await db.SaveChangesAsync();
+                _coffeeShopOrderService.DeleteClientOrder(id);
                 return RedirectToAction("Index");
             }
             return NotFound();

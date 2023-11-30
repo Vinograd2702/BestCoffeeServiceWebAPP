@@ -1,0 +1,12 @@
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.csproj.AssemblyReference.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.AssemblyInfoInputs.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.AssemblyInfo.cs
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\bin\Debug\net6.0\BestCoffeeService.DAL.deps.json
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\bin\Debug\net6.0\BestCoffeeService.DAL.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\bin\Debug\net6.0\BestCoffeeService.DAL.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\refint\BestCoffeeService.DAL.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\BestCoffeeService.DAL.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService.DAL\obj\Debug\net6.0\ref\BestCoffeeService.DAL.dll

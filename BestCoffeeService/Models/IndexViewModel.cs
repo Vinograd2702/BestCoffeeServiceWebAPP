@@ -1,15 +1,17 @@
-﻿namespace BestCoffeeService.Models
+﻿using BestCoffeeService.BLL.DTO;
+
+namespace BestCoffeeService.Models
 {
     public class IndexViewModel
     {
-        public IEnumerable<CoffeeShopMenuItem> CoffeeShopMenuItems { get; }
+        public IEnumerable<ClientOrderDTO> ClientOrderDTOs { get; }
         public PageViewModel PageViewModel { get; }
         public FilterViewModel FilterViewModel { get; }
         public SortViewModel SortViewModel { get; }
-        public IndexViewModel(IEnumerable<CoffeeShopMenuItem> coffeeShopMenuItems, PageViewModel pageViewModel,
+        public IndexViewModel(IEnumerable<ClientOrderDTO> clientOrderDTOs, PageViewModel pageViewModel,
             FilterViewModel filterViewModel, SortViewModel sortViewModel)
         {
-            CoffeeShopMenuItems = coffeeShopMenuItems;
+            ClientOrderDTOs = clientOrderDTOs;
             PageViewModel = pageViewModel;
             FilterViewModel = filterViewModel;
             SortViewModel = sortViewModel;

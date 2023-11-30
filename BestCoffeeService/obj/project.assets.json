@@ -963,6 +963,32 @@
             "rid": "win"
           }
         }
+      },
+      "BestCoffeeService.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "BestCoffeeService.DAL": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BestCoffeeService.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestCoffeeService.BLL.dll": {}
+        }
+      },
+      "BestCoffeeService.DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "7.0.13"
+        },
+        "compile": {
+          "bin/placeholder/BestCoffeeService.DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BestCoffeeService.DAL.dll": {}
+        }
       }
     }
   },
@@ -2612,10 +2638,22 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BestCoffeeService.BLL/1.0.0": {
+      "type": "project",
+      "path": "../BestCoffeeService.BLL/BestCoffeeService.BLL.csproj",
+      "msbuildProject": "../BestCoffeeService.BLL/BestCoffeeService.BLL.csproj"
+    },
+    "BestCoffeeService.DAL/1.0.0": {
+      "type": "project",
+      "path": "../BestCoffeeService.DAL/BestCoffeeService.DAL.csproj",
+      "msbuildProject": "../BestCoffeeService.DAL/BestCoffeeService.DAL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BestCoffeeService.BLL >= 1.0.0",
+      "BestCoffeeService.DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.13"
     ]
   },
@@ -2626,11 +2664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Vladislav\\source\\repos\\BestCoffeeServiceRedyToWorkWithIPv4\\BestCoffeeService.csproj",
+      "projectUniqueName": "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService\\BestCoffeeService.csproj",
       "projectName": "BestCoffeeService",
-      "projectPath": "C:\\Users\\Vladislav\\source\\repos\\BestCoffeeServiceRedyToWorkWithIPv4\\BestCoffeeService.csproj",
+      "projectPath": "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService\\BestCoffeeService.csproj",
       "packagesPath": "C:\\Users\\Vladislav\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Vladislav\\source\\repos\\BestCoffeeServiceRedyToWorkWithIPv4\\obj\\",
+      "outputPath": "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2651,7 +2689,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService.BLL\\BestCoffeeService.BLL.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService.BLL\\BestCoffeeService.BLL.csproj"
+            },
+            "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService.DAL\\BestCoffeeService.DAL.csproj": {
+              "projectPath": "C:\\Users\\Vladislav\\GitHub\\BestCoffeeServiceWebAPP\\BestCoffeeService.DAL\\BestCoffeeService.DAL.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

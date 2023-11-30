@@ -8,17 +8,17 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BestCoffeeService
 build_property.RootNamespace = BestCoffeeService
-build_property.ProjectDir = C:\Users\Vladislav\source\repos\BestCoffeeServiceRedyToWorkWithIPv4\
+build_property.ProjectDir = C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Vladislav\source\repos\BestCoffeeServiceRedyToWorkWithIPv4
+build_property.MSBuildProjectDirectory = C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Vladislav/source/repos/BestCoffeeServiceRedyToWorkWithIPv4/Views/Home/Create.cshtml]
+[C:/Users/Vladislav/GitHub/BestCoffeeServiceWebAPP/BestCoffeeService/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Vladislav/source/repos/BestCoffeeServiceRedyToWorkWithIPv4/Views/Home/Index.cshtml]
+[C:/Users/Vladislav/GitHub/BestCoffeeServiceWebAPP/BestCoffeeService/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

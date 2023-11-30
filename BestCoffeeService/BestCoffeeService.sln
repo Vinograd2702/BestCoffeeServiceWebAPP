@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestCoffeeService", "BestCoffeeService.csproj", "{4163C6AF-6019-42CD-8021-92171B376EF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BestCoffeeService", "BestCoffeeService.csproj", "{4163C6AF-6019-42CD-8021-92171B376EF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestCoffeeService.DAL", "..\BestCoffeeService.DAL\BestCoffeeService.DAL.csproj", "{271E7BDF-0FD3-45C2-AD0B-CE4F42EC1968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestCoffeeService.BLL", "..\BestCoffeeService.BLL\BestCoffeeService.BLL.csproj", "{988A257E-F36C-4C86-A8A2-EBDA5EC591A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{4163C6AF-6019-42CD-8021-92171B376EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4163C6AF-6019-42CD-8021-92171B376EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4163C6AF-6019-42CD-8021-92171B376EF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{271E7BDF-0FD3-45C2-AD0B-CE4F42EC1968}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{271E7BDF-0FD3-45C2-AD0B-CE4F42EC1968}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{271E7BDF-0FD3-45C2-AD0B-CE4F42EC1968}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{271E7BDF-0FD3-45C2-AD0B-CE4F42EC1968}.Release|Any CPU.Build.0 = Release|Any CPU
+		{988A257E-F36C-4C86-A8A2-EBDA5EC591A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{988A257E-F36C-4C86-A8A2-EBDA5EC591A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{988A257E-F36C-4C86-A8A2-EBDA5EC591A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{988A257E-F36C-4C86-A8A2-EBDA5EC591A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
