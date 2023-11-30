@@ -16,5 +16,7 @@ namespace BestCoffeeService.DAL.Interfaces
         Task<List<T>> GetAll(); // вернуть все сущности заданного типа
 
         Task<bool> Delete(int id);// пока добавил удаление по ID
+
+        Task<T> Update(T item);
     }
 }

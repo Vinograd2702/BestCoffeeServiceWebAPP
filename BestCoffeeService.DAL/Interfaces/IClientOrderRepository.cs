@@ -11,6 +11,6 @@ namespace BestCoffeeService.DAL.Interfaces
     {
         Task<ClientOrder> GetByNameOfClient(string nameOfClient);
 
-
+        Task<bool> Complite (int id);
     }
 }

@@ -20,6 +20,27 @@ namespace BestCoffeeService.DAL.Repositories
 
         }
 
+        public async Task<bool> Complite(int id)
+        {
+            ClientOrder order = await _db.ClientOrders.FirstOrDefaultAsync(o => o.Id == id);
+
+            order.OrderStatus = "Выполнен";
+
+            _db.ClientOrders.Update(order);
+            await _db.SaveChangesAsync();
+            return true;
+            //try
+            //{
+            //    _db.ClientOrders.Update(item);
+            //    await _db.SaveChangesAsync();
+            //    return item;
+            //}
+            //catch (Exception ex)
+            //{
+            //    return item;
+            //}
+        }
+
         public async Task<bool> Create(ClientOrder item)
         {
             try
@@ -56,6 +77,20 @@ namespace BestCoffeeService.DAL.Repositories
         public async Task<ClientOrder> GetByNameOfClient(string nameOfClient)
         {
             return await _db.ClientOrders.FirstOrDefaultAsync(o => o.NameOfClient == nameOfClient);
+        }
+
+        public async Task<ClientOrder> Update(ClientOrder item)
+        {
+            try
+            {
+                _db.ClientOrders.Update(item);
+                await _db.SaveChangesAsync();
+                return item;
+            }
+            catch (Exception ex)
+            {
+                return item;
+            }
         }
     }
 }

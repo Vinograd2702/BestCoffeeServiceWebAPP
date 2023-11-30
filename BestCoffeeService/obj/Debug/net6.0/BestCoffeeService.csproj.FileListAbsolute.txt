@@ -286,3 +286,9 @@ C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\ne
 C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\BestCoffeeService.DAL.dll
 C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\BestCoffeeService.BLL.pdb
 C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\BestCoffeeService.DAL.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\MyBackgroundService.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\BestCoffeeService\bin\Debug\net6.0\MyBackgroundService.pdb

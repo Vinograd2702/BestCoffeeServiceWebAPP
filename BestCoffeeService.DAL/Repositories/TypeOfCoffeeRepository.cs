@@ -29,6 +29,7 @@ namespace BestCoffeeService.DAL.Repositories
                 OrderDate = DateTime.Now,
                 TypeOfCoffee = Сappuccino,
                 TypeOfCoffeeID = Сappuccino.Id,
+                Sum = Сappuccino.PriceForCupOfCoffee,
                 OrderStatus = "В процессе"
 
             };
@@ -75,6 +76,13 @@ namespace BestCoffeeService.DAL.Repositories
         public async Task<List<TypeOfCoffee>> GetAll()
         {
             return await _db.TypeOfCoffees.ToListAsync();
+        }
+
+        public async Task<TypeOfCoffee> Update(TypeOfCoffee item)
+        {
+            _db.TypeOfCoffees.Update(item);
+            await _db.SaveChangesAsync();
+            return item;
         }
 
         async Task<List<ClientOrder>> ITypeOfCoffeeRepository.GetOrdersByType(int id) //проверь метод

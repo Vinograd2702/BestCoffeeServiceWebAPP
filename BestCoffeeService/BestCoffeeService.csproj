@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BestCoffeeService.BLL\BestCoffeeService.BLL.csproj" />
     <ProjectReference Include="..\BestCoffeeService.DAL\BestCoffeeService.DAL.csproj" />
+    <ProjectReference Include="..\OrderExecutorBackgroundService\MyBackgroundService.csproj" />
   </ItemGroup>
 
 </Project>

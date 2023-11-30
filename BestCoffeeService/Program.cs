@@ -5,6 +5,7 @@ using BestCoffeeService.BLL.Interfaces;
 using BestCoffeeService.BLL.Services;
 using BestCoffeeService.DAL.Interfaces;
 using BestCoffeeService.DAL.Repositories;
+using MyBackgroundService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,12 +19,13 @@ builder.Services.AddDbContext<BestCoffeeContext>(options =>//подключил бд с конт
     });
 });
 
-//AddScoped
+
 builder.Services.AddScoped<ICoffeeShopOrderService, CoffeeShopOrderService>();//добавил сервис
 builder.Services.AddScoped<IClientOrderRepository, ClientOrderRepository>();
 builder.Services.AddScoped<ITypeOfCoffeeRepository, TypeOfCoffeeRepository>();
-//builder.Services.AddDbContext<CoffeeShopMenuItemContext>(options => options.UseSqlServer(connection));
-//builder.Services.AddSingleton
+
+builder.Services.AddHostedService<OrderExecutorBackgroundService>();
+
 builder.Services.AddControllersWithViews();
 
 

@@ -1,0 +1,15 @@
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\bin\Debug\net6.0\MyBackgroundService.deps.json
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\bin\Debug\net6.0\MyBackgroundService.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\bin\Debug\net6.0\MyBackgroundService.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\bin\Debug\net6.0\BestCoffeeService.DAL.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\bin\Debug\net6.0\BestCoffeeService.DAL.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.csproj.AssemblyReference.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.AssemblyInfoInputs.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.AssemblyInfo.cs
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.csproj.CoreCompileInputs.cache
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.csproj.CopyComplete
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\refint\MyBackgroundService.dll
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\MyBackgroundService.pdb
+C:\Users\Vladislav\GitHub\BestCoffeeServiceWebAPP\OrderExecutorBackgroundService\obj\Debug\net6.0\ref\MyBackgroundService.dll
